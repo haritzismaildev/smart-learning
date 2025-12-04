@@ -56,27 +56,27 @@ export default function ParentDashboard() {
   }, [router]);
 
   const fetchChildrenProgress = async (token: string) => {
-    try {
-      const response = await fetch(getApiEndpoint('progress/parent/children'), {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        },
-      });
+  try {
+    const response = await fetch(getApiEndpoint('progress/parent/children'), {
+      method: 'POST',  // Ini menggunakan POST
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+    });
 
-      if (!response.ok) {
-        throw new Error('Failed to fetch children progress');
-      }
-
-      const data = await response.json();
-      setChildren(data.data.children || []);
-    } catch (error) {
-      console.error('Error fetching children progress:', error);
-    } finally {
-      setLoading(false);
+    if (!response.ok) {
+      throw new Error('Failed to fetch children progress');
     }
-  };
+
+    const data = await response.json();
+    setChildren(data.data.children || []);
+  } catch (error) {
+    console.error('Error fetching children progress:', error);
+  } finally {
+    setLoading(false);
+  }
+};
 
   const handleLogout = () => {
     localStorage.removeItem('token');
