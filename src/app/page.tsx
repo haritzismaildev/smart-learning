@@ -99,20 +99,85 @@ export default function LandingPage() {
             ⭐ Kenapa Pilih Smart Learning?
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center">
+            <button
+              onClick={() => router.push('/features/gamification')}
+              className="text-center p-6 rounded-xl hover:bg-gradient-to-br hover:from-purple-50 hover:to-pink-50 transition transform hover:scale-105 cursor-pointer"
+            >
               <div className="text-4xl mb-2">🎮</div>
               <h4 className="font-bold text-gray-800 mb-1">Belajar Sambil Bermain</h4>
               <p className="text-sm text-gray-600">Metode gamifikasi yang fun!</p>
-            </div>
-            <div className="text-center">
+              <div className="text-purple-600 font-semibold mt-2 text-sm">Klik untuk detail →</div>
+            </button>
+            <button
+              onClick={() => router.push('/features/monitoring')}
+              className="text-center p-6 rounded-xl hover:bg-gradient-to-br hover:from-blue-50 hover:to-cyan-50 transition transform hover:scale-105 cursor-pointer"
+            >
               <div className="text-4xl mb-2">👨‍👩‍👧</div>
               <h4 className="font-bold text-gray-800 mb-1">Monitoring Orang Tua</h4>
               <p className="text-sm text-gray-600">Pantau progress anak real-time</p>
-            </div>
-            <div className="text-center">
+              <div className="text-blue-600 font-semibold mt-2 text-sm">Klik untuk detail →</div>
+            </button>
+            <button
+              onClick={() => router.push('/features/curriculum')}
+              className="text-center p-6 rounded-xl hover:bg-gradient-to-br hover:from-green-50 hover:to-emerald-50 transition transform hover:scale-105 cursor-pointer"
+            >
               <div className="text-4xl mb-2">🎯</div>
               <h4 className="font-bold text-gray-800 mb-1">Sesuai Kurikulum</h4>
               <p className="text-sm text-gray-600">Materi SD kelas 1-6</p>
+              <div className="text-green-600 font-semibold mt-2 text-sm">Klik untuk detail →</div>
+            </button>
+          </div>
+        </div>
+
+        {/* Footer - Creator Credit */}
+        <div className="mt-12 bg-gradient-to-r from-gray-800 to-gray-900 rounded-2xl p-8 shadow-2xl">
+          <div className="text-center">
+            <div className="mb-4">
+              <div className="inline-block bg-gradient-to-r from-purple-500 to-pink-500 rounded-full px-6 py-2 mb-3">
+                <span className="text-white font-bold text-sm">✨ SMART LEARNING 2025 ✨</span>
+              </div>
+            </div>
+            
+            <div className="mb-4">
+              <p className="text-gray-300 text-sm mb-2">Proudly Developed By</p>
+              <h3 className="text-2xl font-bold text-white mb-1">
+                Haritz
+              </h3>
+              <div className="flex items-center justify-center gap-2 text-gray-400 text-sm">
+                <span>©</span>
+                <span className="font-mono">2025</span>
+                <span>•</span>
+                <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent font-semibold">
+                  CreativeJawiProduction.prod
+                </span>
+              </div>
+            </div>
+
+            <div className="pt-4 border-t border-gray-700">
+              <div className="flex flex-wrap justify-center gap-4 text-gray-400 text-xs">
+                <span className="flex items-center gap-1">
+                  <span className="text-green-400">●</span>
+                  Next.js 16
+                </span>
+                <span>•</span>
+                <span className="flex items-center gap-1">
+                  <span className="text-blue-400">●</span>
+                  TypeScript
+                </span>
+                <span>•</span>
+                <span className="flex items-center gap-1">
+                  <span className="text-purple-400">●</span>
+                  PostgreSQL
+                </span>
+                <span>•</span>
+                <span className="flex items-center gap-1">
+                  <span className="text-pink-400">●</span>
+                  Tailwind CSS
+                </span>
+              </div>
+              <p className="text-gray-500 text-xs mt-3">
+                Made with ❤️ for Indonesian Children Education
+              </p>
             </div>
           </div>
         </div>
