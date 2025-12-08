@@ -259,7 +259,7 @@ export async function GET(request: NextRequest) {
                 'Content-Disposition': `attachment; filename="${filename}"`,
             },
         });
-    } catch(error) {
+    } catch(error: any) {
         console.error('Error exporting audit logs:', error);
 
         if (error.name === 'JsonWebTokenError') {

@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { 
   Users, CheckCircle, XCircle, Eye, Mail, Phone,
   Clock, AlertCircle, Filter, Search, LogOut,
-  FileText, Activity, Shield, Eye,
+  FileText, Activity, Shield
 } from 'lucide-react';
 import DashboardSidebar from '@/components/DashboardSidebar';
 

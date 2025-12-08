@@ -17,8 +17,8 @@ export async function DELETE(request: NextRequest) {
 
     try {
         // 1. verify JWT Token
-        const authHeader = request.header.get('authorization');
-        if (!authHeader || !authHeader.starsWith('Bearer')) {
+        const authHeader = request.headers.get('authorization');
+        if (!authHeader || !authHeader.startsWith('Bearer')) {
             return NextResponse.json({
                 success: false,
                 error: 'Unauthorized - No token provided'
