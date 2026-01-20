@@ -72,6 +72,7 @@ export default function ChildDashboard() {
 
   const mathProgress = progress.find(p => p.subject === 'math');
   const englishProgress = progress.find(p => p.subject === 'english');
+  const arabicProgress = progress.find(p => p.subject === 'arabic'); // ⬅️ NEW!
 
   if (loading) {
     return (
@@ -104,8 +105,8 @@ export default function ChildDashboard() {
           </div>
         </div>
 
-        {/* Progress Summary */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        {/* Progress Summary - UPDATED WITH ARABIC! */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
           {/* Math Progress */}
           <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl p-6">
             <div className="text-5xl mb-3">🧮</div>
@@ -145,10 +146,32 @@ export default function ChildDashboard() {
               </div>
             </div>
           </div>
+
+          {/* ========================================= */}
+          {/* ARABIC PROGRESS - NEW!                    */}
+          {/* ========================================= */}
+          <div className="bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-2xl p-6">
+            <div className="text-5xl mb-3">🕌</div>
+            <h3 className="text-xl font-bold text-emerald-800 mb-2">Bahasa Arab</h3>
+            <div className="space-y-2">
+              <div className="flex justify-between">
+                <span className="text-emerald-700">Level</span>
+                <span className="font-bold text-emerald-900">{arabicProgress?.current_level || 1}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-emerald-700">Poin</span>
+                <span className="font-bold text-emerald-900">{arabicProgress?.total_points || 0}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-emerald-700">Benar</span>
+                <span className="font-bold text-emerald-900">{arabicProgress?.total_correct || 0}/{arabicProgress?.total_attempted || 0}</span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Learning Menu */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        {/* Learning Menu - UPDATED WITH ARABIC! */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
           <button
             onClick={() => router.push('/learn/math')}
             className="bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-3xl p-8 shadow-xl hover:scale-105 transition transform"
@@ -165,6 +188,18 @@ export default function ChildDashboard() {
             <div className="text-6xl mb-4">📚</div>
             <h2 className="text-2xl font-bold mb-2">Belajar Bahasa Inggris</h2>
             <p className="text-green-100">Belajar kata-kata baru!</p>
+          </button>
+
+          {/* ========================================= */}
+          {/* ARABIC LEARN BUTTON - NEW!                */}
+          {/* ========================================= */}
+          <button
+            onClick={() => router.push('/learn/arabic')}
+            className="bg-gradient-to-br from-emerald-500 to-emerald-700 text-white rounded-3xl p-8 shadow-xl hover:scale-105 transition transform"
+          >
+            <div className="text-6xl mb-4">🕌</div>
+            <h2 className="text-2xl font-bold mb-2">Belajar Bahasa Arab</h2>
+            <p className="text-emerald-100">Mulai dari huruf hijaiyah!</p>
           </button>
         </div>
 
